@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Paquete descargable — Gustavo Barreiro</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Montserrat',sans-serif; background:#F4F1EA; color:#1A1A1A; padding:50px 30px; }
+  .container { max-width:1100px; margin:0 auto; }
+  header { text-align:center; margin-bottom:50px; padding-bottom:30px; border-bottom:2px solid #0B3B60; }
+  header h1 { font-size:32px; letter-spacing:8px; font-weight:700; }
+  header .sub { font-size:12px; letter-spacing:8px; color:#C06C4C; margin-top:8px; }
+  header p { font-size:13px; letter-spacing:2px; color:#0B3B60; margin-top:20px; }
+  h2 { font-size:13px; letter-spacing:6px; color:#0B3B60; text-transform:uppercase; margin:40px 0 20px; padding-bottom:8px; border-bottom:1px solid #0B3B60; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+  .card { background:#fff; border-radius:6px; padding:20px; box-shadow:0 2px 12px rgba(0,0,0,.06); display:flex; flex-direction:column; justify-content:space-between; min-height:130px; transition:transform .2s; }
+  .card:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.1); }
+  .card h3 { font-size:13px; letter-spacing:2px; font-weight:700; margin-bottom:6px; }
+  .card p { font-size:11px; letter-spacing:1px; color:#666; line-height:1.6; margin-bottom:14px; }
+  .card .ext { font-size:9px; letter-spacing:3px; color:#C06C4C; font-weight:700; margin-bottom:10px; }
+  button { width:100%; padding:11px; border:none; border-radius:4px; background:#0B3B60; color:#fff; font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:3px; cursor:pointer; text-transform:uppercase; font-weight:700; }
+  button:hover { background:#C06C4C; }
+  .bulk { background:#C06C4C; padding:16px; border-radius:6px; margin-bottom:20px; text-align:center; }
+  .bulk button { background:#1A1A1A; padding:14px; font-size:11px; max-width:400px; margin:0 auto; }
+  .bulk button:hover { background:#0B3B60; }
+  footer { text-align:center; margin-top:60px; padding-top:30px; border-top:1px solid #ccc; font-size:10px; letter-spacing:4px; color:#888; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>GUSTAVO BARREIRO</h1>
+  <div class="sub">ARQUITECTURA + INGENIERÍA · DISEÑO</div>
+  <p>PAQUETE DE IDENTIDAD CORPORATIVA · DESCARGA TODO CON UN CLIC</p>
+</header>
+
+<div class="bulk">
+  <button onclick="downloadAll()">⬇ DESCARGAR LOS 12 ARCHIVOS</button>
+</div>
+
+<h2>01 · Logotipos vectoriales (SVG)</h2>
+<div class="grid" id="logos-grid"></div>
+
+<h2>02 · Archivos de presentación y guías (HTML)</h2>
+<div class="grid" id="docs-grid"></div>
+
+<footer>
+  V1.0 · 2025 · IDENTIDAD VISUAL GUSTAVO BARREIRO
+</footer>
+
+</div>
+
+<script>
+/* ============================================================
+   1. LOGOTIPOS SVG
+   ============================================================ */
+const logos = {
+  'gb-horizontal.svg': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+<defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap');
+.name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:42px;letter-spacing:8px;fill:#1A1A1A}
+.sub{font-family:'Montserrat',sans-serif;font-weight:400;font-size:16px;letter-spacing:12px;fill:#0B3B60}
+.dis{font-family:'Montserrat',sans-serif;font-weight:300;font-size:14px;letter-spacing:16px;fill:#C06C4C}</style></defs>
+<rect width="1200" height="400" fill="#F4F1EA"/>
+<g transform="translate(80,70)">
+<rect width="22" height="260" fill="#1A1A1A"/><rect width="380" height="22" fill="#1A1A1A"/>
+<rect x="250" y="-12" width="46" height="46" fill="#1A1A1A"/><rect x="358" width="22" height="120" fill="#1A1A1A"/>
+<rect y="238" width="340" height="22" fill="#1A1A1A"/><rect x="170" y="226" width="46" height="46" fill="#1A1A1A"/>
+<rect x="318" y="140" width="22" height="120" fill="#1A1A1A"/></g>
+<line x1="520" y1="70" x2="520" y2="330" stroke="#1A1A1A" stroke-width="6"/>
+<text class="name" x="580" y="180">GUSTAVO BARREIRO</text>
+<text class="sub" x="582" y="228">ARQUITECTURA + INGENIERÍA</text>
+<text class="dis" x="582" y="266">DISEÑO</text></svg>`,
+
+  'gb-horizontal-invertido.svg': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+<defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap');
+.name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:42px;letter-spacing:8px;fill:#F4F1EA}
+.sub{font-family:'Montserrat',sans-serif;font-weight:400;font-size:16px;letter-spacing:12px;fill:#F4F1EA}
+.dis{font-family:'Montserrat',sans-serif;font-weight:300;font-size:14px;letter-spacing:16px;fill:#C06C4C}</style></defs>
+<rect width="1200" height="400" fill="#0B3B60"/>
+<g transform="translate(80,70)">
+<rect width="22" height="260" fill="#F4F1EA"/><rect width="380" height="22" fill="#F4F1EA"/>
+<rect x="250" y="-12" width="46" height="46" fill="#F4F1EA"/><rect x="358" width="22" height="120" fill="#F4F1EA"/>
+<rect y="238" width="340" height="22" fill="#F4F1EA"/><rect x="170" y="226" width="46" height="46" fill="#F4F1EA"/>
+<rect x="318" y="140" width="22" height="120" fill="#F4F1EA"/></g>
+<line x1="520" y1="70" x2="520" y2="330" stroke="#F4F1EA" stroke-width="6" opacity="0.5"/>
+<text class="name" x="580" y="180">GUSTAVO BARREIRO</text>
+<text class="sub" x="582" y="228">ARQUITECTURA + INGENIERÍA</text>
+<text class="dis" x="582" y="266">DISEÑO</text></svg>`,
+
+  'gb-vertical.svg': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+<defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap');
+.name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:56px;letter-spacing:8px;fill:#F4F1EA}
+.sub{font-family:'Montserrat',sans-serif;font-weight:400;font-size:20px;letter-spacing:12px;fill:#F4F1EA}
+.dis{font-family:'Montserrat',sans-serif;font-weight:300;font-size:16px;letter-spacing:18px;fill:#C06C4C}</style></defs>
+<rect width="1080" height="1080" fill="#0B3B60"/>
+<g transform="translate(190,200) scale(1.75)">
+<rect width="22" height="260" fill="#F4F1EA"/><rect width="380" height="22" fill="#F4F1EA"/>
+<rect x="250" y="-12" width="46" height="46" fill="#F4F1EA"/><rect x="358" width="22" height="120" fill="#F4F1EA"/>
+<rect y="238" width="340" height="22" fill="#F4F1EA"/><rect x="170" y="226" width="46" height="46" fill="#F4F1EA"/>
+<rect x="318" y="140" width="22" height="120" fill="#F4F1EA"/></g>
+<text class="name" x="540" y="800" text-anchor="middle">GUSTAVO BARREIRO</text>
+<text class="sub" x="540" y="855" text-anchor="middle">ARQUITECTURA + INGENIERÍA</text>
+<text class="dis" x="540" y="905" text-anchor="middle">DISEÑO</text></svg>`,
+
+  'gb-isotipo.svg': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+<circle cx="250" cy="250" r="250" fill="#0B3B60"/>
+<g transform="translate(80,134) scale(0.895)">
+<rect width="22" height="260" fill="#F4F1EA"/><rect width="380" height="22" fill="#F4F1EA"/>
+<rect x="250" y="-12" width="46" height="46" fill="#F4F1EA"/><rect x="358" width="22" height="120" fill="#F4F1EA"/>
+<rect y="238" width="340" height="22" fill="#F4F1EA"/><rect x="170" y="226" width="46" height="46" fill="#F4F1EA"/>
+<rect x="318" y="140" width="22" height="120" fill="#F4F1EA"/></g></svg>`,
+
+  'gb-monocromatico.svg': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+<defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap');
+.name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:42px;letter-spacing:8px;fill:#000}
+.sub{font-family:'Montserrat',sans-serif;font-weight:400;font-size:16px;letter-spacing:12px;fill:#000}
+.dis{font-family:'Montserrat',sans-serif;font-weight:300;font-size:14px;letter-spacing:16px;fill:#000}</style></defs>
+<rect width="1200" height="400" fill="#FFFFFF"/>
+<g transform="translate(80,70)">
+<rect width="22" height="260" fill="#000"/><rect width="380" height="22" fill="#000"/>
+<rect x="250" y="-12" width="46" height="46" fill="#000"/><rect x="358" width="22" height="120" fill="#000"/>
+<rect y="238" width="340" height="22" fill="#000"/><rect x="170" y="226" width="46" height="46" fill="#000"/>
+<rect x="318" y="140" width="22" height="120" fill="#000"/></g>
+<line x1="520" y1="70" x2="520" y2="330" stroke="#000" stroke-width="6"/>
+<text class="name" x="580" y="180">GUSTAVO BARREIRO</text>
+<text class="sub" x="582" y="228">ARQUITECTURA + INGENIERÍA</text>
+<text class="dis" x="582" y="266">DISEÑO</text></svg>`,
+
+  'gb-whatsapp.svg': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+<circle cx="320" cy="320" r="320" fill="#0B3B60"/>
+<g transform="translate(120,190) scale(0.72)">
+<rect width="22" height="260" fill="#F4F1EA"/><rect width="380" height="22" fill="#F4F1EA"/>
+<rect x="250" y="-12" width="46" height="46" fill="#F4F1EA"/><rect x="358" width="22" height="120" fill="#F4F1EA"/>
+<rect y="238" width="340" height="22" fill="#F4F1EA"/><rect x="170" y="226" width="46" height="46" fill="#F4F1EA"/>
+<rect x="318" y="140" width="22" height="120" fill="#F4F1EA"/></g></svg>`,
+
+  'gb-linkedin-cover.svg': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396">
+<defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap');
+.h{font-family:'Montserrat',sans-serif;font-weight:700;font-size:52px;letter-spacing:8px;fill:#F4F1EA}
+.s{font-family:'Montserrat',sans-serif;font-weight:300;font-size:18px;letter-spacing:10px;fill:#C06C4C}</style></defs>
+<rect width="1584" height="396" fill="#0B3B60"/>
+<g transform="translate(100,90) scale(0.8)">
+<rect width="22" height="260" fill="#F4F1EA"/><rect width="380" height="22" fill="#F4F1EA"/>
+<rect x="250" y="-12" width="46" height="46" fill="#F4F1EA"/><rect x="358" width="22" height="120" fill="#F4F1EA"/>
+<rect y="238" width="340" height="22" fill="#F4F1EA"/><rect x="170" y="226" width="46" height="46" fill="#F4F1EA"/>
+<rect x="318" y="140" width="22" height="120" fill="#F4F1EA"/></g>
+<line x1="600" y1="90" x2="600" y2="306" stroke="#C06C4C" stroke-width="3"/>
+<text x="680" y="180" class="h">GUSTAVO BARREIRO</text>
+<text x="684" y="220" class="s">ARQUITECTURA + INGENIERÍA · DISEÑO</text></svg>`
+};
+
+/* ============================================================
+   2. DOCUMENTOS HTML (incrustados como texto)
+   ============================================================ */
+const docs = {
+
+  'gb-pitch-deck.html': { name:'Pitch Deck Comercial', desc:'Presentación de 9 slides navegable con flechas del teclado. Exportable a PDF con Ctrl+P.', ext:'HTML' },
+
+  'gb-manual-marca.html': { name:'Manual de Marca', desc:'Documento A4 de 7 páginas con filosofía, logo, color, tipografía, usos y aplicaciones. Exportable a PDF.', ext:'HTML' },
+
+  'gb-redes-sociales.html': { name:'Plantillas Redes Sociales', desc:'6 plantillas descargables en SVG y PNG (feed, story, LinkedIn, WhatsApp) con botones.', ext:'HTML' }
+
+};
+
+/* ============================================================
+   3. GENERADOR DE DESCARGAS
+   ============================================================ */
+function download(filename, content, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 500);
+}
+
+/* Render logos */
+const logoGrid = document.getElementById('logos-grid');
+Object.entries(logos).forEach(([filename, svg]) => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  const niceName = filename.replace('.svg','').replace('gb-','').replace(/-/g,' ');
+  card.innerHTML = `
+    <div>
+      <div class="ext">SVG · VECTORIAL</div>
+      <h3>${niceName.toUpperCase()}</h3>
+      <p>Escalable sin pérdida. Editable en Figma, Illustrator o navegador.</p>
+    </div>
+    <div>
+      <button onclick="download('${filename}', \`${svg.replace(/`/g,'\\`')}\`, 'image/svg+xml')">Descargar SVG</button>
+      <button style="margin-top:6px;background:#C06C4C" onclick="downloadPNG('${filename}', \`${svg.replace(/`/g,'\\`')}\`)">Descargar PNG</button>
+    </div>`;
+  logoGrid.appendChild(card);
+});
+
+/* Render docs */
+const docsGrid = document.getElementById('docs-grid');
+Object.entries(docs).forEach(([filename, info]) => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div>
+      <div class="ext">${info.ext}</div>
+      <h3>${info.name.toUpperCase()}</h3>
+      <p>${info.desc}</p>
+    </div>
+    <div>
+      <button onclick="openDoc('${filename}')">Abrir en nueva pestaña</button>
+      <button style="margin-top:6px;background:#C06C4C" onclick="openDoc('${filename}')">Guardar (Ctrl+S en pestaña)</button>
+    </div>`;
+  docsGrid.appendChild(card);
+});
+
+/* Descargar PNG a partir del SVG */
+function downloadPNG(filename, svgString) {
+  const blob = new Blob([svgString], { type:'image/svg+xml;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  img.onload = () => {
+    // Extraer dimensiones del viewBox
+    const vbMatch = svgString.match(/viewBox="0 0 (\d+) (\d+)"/);
+    const w = vbMatch ? parseInt(vbMatch[1]) : 1200;
+    const h = vbMatch ? parseInt(vbMatch[2]) : 400;
+    const scale = w < 800 ? 2 : 1;
+    const canvas = document.createElement('canvas');
+    canvas.width = w * scale; canvas.height = h * scale;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    canvas.toBlob(b => {
+      const pngUrl = URL.createObjectURL(b);
+      const a = document.createElement('a');
+      a.href = pngUrl; a.download = filename.replace('.svg','.png');
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(pngUrl), 500);
+    });
+  };
+  img.src = url;
+}
+
+/* Abrir documentos en nueva pestaña (el usuario los guarda con Ctrl+S o Ctrl+P) */
+function openDoc(filename) {
+  const docContent = getDocContent(filename);
+  const blob = new Blob([docContent], { type:'text/html' });
+  const url = URL.createObjectURL(blob);
+  window.open(url, '_blank');
+}
+
+/* Contenido completo de los documentos */
+function getDocContent(filename) {
+  if (filename === 'gb-pitch-deck.html') return PITCH_DECK_HTML;
+  if (filename === 'gb-manual-marca.html') return MANUAL_HTML;
+  if (filename === 'gb-redes-sociales.html') return REDES_HTML;
+  return '';
+}
+
+/* Descargar todo */
+function downloadAll() {
+  const allFiles = [
+    ...Object.entries(logos).map(([f, c]) => ({f, c, m:'image/svg+xml'})),
+    {f:'gb-pitch-deck.html', c:PITCH_DECK_HTML, m:'text/html'},
+    {f:'gb-manual-marca.html', c:MANUAL_HTML, m:'text/html'},
+    {f:'gb-redes-sociales.html', c:REDES_HTML, m:'text/html'}
+  ];
+  allFiles.forEach((file, i) => {
+    setTimeout(() => download(file.f, file.c, file.m), i * 250);
+  });
+  alert('Se descargarán ' + allFiles.length + ' archivos. Autoriza las descargas múltiples si el navegador lo pide.');
+}
+
+/* ============================================================
+   4. CONTENIDO DE LOS DOCUMENTOS (strings)
+   ============================================================ */
+
+const PITCH_DECK_HTML = ${JSON.stringify(`<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><title>Pitch Deck — Gustavo Barreiro</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',sans-serif;background:#0B3B60;overflow:hidden;height:100vh}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:80px 100px}
+.slide.active{display:flex}
+.slide.light{background:#F4F1EA;color:#1A1A1A}
+.slide.dark{background:#0B3B60;color:#F4F1EA}
+h1{font-size:64px;letter-spacing:10px;font-weight:700;line-height:1.1;margin-bottom:20px}
+h2{font-size:34px;letter-spacing:6px;font-weight:700;margin-bottom:40px}
+h3{font-size:14px;letter-spacing:5px;color:#C06C4C;margin-bottom:16px}
+p{font-size:17px;line-height:1.8;letter-spacing:1px;max-width:900px}
+.sub{font-size:18px;letter-spacing:8px;color:#C06C4C;margin-top:20px}
+ul{list-style:none;margin-top:24px}
+li{font-size:18px;line-height:2.2;letter-spacing:1px}
+li::before{content:'—';margin-right:16px;color:#C06C4C}
+.nav{position:fixed;bottom:40px;right:50px;display:flex;gap:12px;z-index:100}
+.dot{width:10px;height:10px;border-radius:50%;background:#F4F1EA;opacity:.3;cursor:pointer}
+.dot.active{opacity:1;background:#C06C4C}
+.arrow{position:fixed;top:50%;transform:translateY(-50%);font-size:40px;color:#F4F1EA;opacity:.4;cursor:pointer;z-index:100;padding:20px;user-select:none}
+.arrow:hover{opacity:1}
+.arrow.left{left:20px}.arrow.right{right:20px}
+.arrow.on-light{color:#1A1A1A}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px}
+.card{padding:30px;border-left:3px solid #C06C4C}
+.card h4{font-size:13px;letter-spacing:4px;color:#C06C4C;margin-bottom:10px}
+.card p{font-size:15px;letter-spacing:0;line-height:1.7}
+.counter{position:fixed;bottom:45px;left:50px;font-size:12px;letter-spacing:4px;color:#F4F1EA;opacity:.5;z-index:100}
+.counter.on-light{color:#1A1A1A}
+</style></head><body>
+<div class="slide light active" data-theme="light"><h3>IDENTIDAD · DISEÑO · OBRA</h3><h1>GUSTAVO<br>BARREIRO</h1><div class="sub">ARQUITECTURA + INGENIERÍA · DISEÑO</div><p style="margin-top:60px;font-size:14px;letter-spacing:3px;opacity:.6">PITCH DECK COMERCIAL · 2025</p></div>
+<div class="slide dark" data-theme="dark"><h3>01 · QUIÉNES SOMOS</h3><h2>Un estudio integral de diseño y construcción</h2><p>Somos un equipo que integra arquitectura e ingeniería bajo un mismo techo. Trabajamos desde el Pacífico colombiano con estándar global: cada proyecto nace del territorio, se piensa con rigor técnico y se entrega con identidad.</p><p style="margin-top:24px">Un solo interlocutor. Un solo responsable. Obra entregada.</p></div>
+<div class="slide light" data-theme="light"><h3>02 · FILOSOFÍA</h3><h2>Diseño alternativo.<br>Arquitectura consciente.</h2><ul><li>Cada decisión responde al entorno, al clima y a la comunidad.</li><li>No repetimos fórmulas: diseñamos soluciones propias.</li><li>Ingeniería rigurosa, arquitectura medible, obra entregada.</li><li>Pacífico colombiano como punto de partida, mundo como destino.</li></ul></div>
+<div class="slide dark" data-theme="dark"><h3>03 · SERVICIOS</h3><h2>Del anteproyecto a la entrega de llaves</h2><div class="grid-2"><div class="card"><h4>DISEÑO</h4><p>Arquitectura, diseño estructural, hidrosanitario, eléctrico, bioclimático, render 3D.</p></div><div class="card"><h4>INGENIERÍA</h4><p>Cálculo estructural, geotecnia, licencias, supervisión técnica, estudios de suelos.</p></div><div class="card"><h4>CONSTRUCCIÓN</h4><p>Obra civil, edificación, remodelación, obra pública y privada, gestión de contratistas.</p></div><div class="card"><h4>INTERVENTORÍA</h4><p>Supervisión técnica, control de calidad, cronogramas, presupuestos, informes.</p></div></div></div>
+<div class="slide light" data-theme="light"><h3>04 · METODOLOGÍA</h3><h2>Cuatro etapas, un solo responsable</h2><div class="grid-2" style="grid-template-columns:repeat(4,1fr);gap:30px"><div class="card"><h4>01 · ESCUCHA</h4><p>Levantamiento, análisis del cliente, objetivos, restricciones, presupuesto.</p></div><div class="card"><h4>02 · DISEÑO</h4><p>Anteproyecto, modelación 3D, ajuste estructural, planos técnicos, presupuesto.</p></div><div class="card"><h4>03 · OBRA</h4><p>Ejecución con cronograma, control de calidad, informes semanales.</p></div><div class="card"><h4>04 · ENTREGA</h4><p>Recibo de obra, manuales, planos as-built, garantía y acompañamiento.</p></div></div></div>
+<div class="slide dark" data-theme="dark"><h3>05 · DIFERENCIADORES</h3><h2>Por qué elegirnos</h2><ul><li><strong>Integración real:</strong> arquitectura e ingeniería en un mismo equipo.</li><li><strong>Raíz territorial:</strong> entendemos el Pacífico colombiano.</li><li><strong>Estándar global:</strong> metodologías BIM, normas internacionales.</li><li><strong>Transparencia:</strong> presupuesto abierto, cronograma visible.</li><li><strong>Obra entregada:</strong> no vendemos planos, entregamos proyectos.</li></ul></div>
+<div class="slide light" data-theme="light"><h3>06 · PROYECTOS</h3><h2>Obra construida y en curso</h2><div class="grid-2"><div class="card"><h4>VIVIENDA UNIFAMILIAR</h4><p>Tumaco, Nariño · 240 m² · 2024 · Diseño + Construcción</p></div><div class="card"><h4>EDIFICIO COMERCIAL</h4><p>Pasto, Nariño · 1.200 m² · 2023 · Diseño + Interventoría</p></div><div class="card"><h4>ADECUACIÓN INSTITUCIONAL</h4><p>Buenaventura, Valle · 800 m² · 2024 · Licencia + Obra</p></div><div class="card"><h4>VIVIENDA CAMPESTRE</h4><p>Popayán, Cauca · 320 m² · 2025 · En diseño</p></div></div><p style="margin-top:40px;font-size:13px;opacity:.6">📌 Reemplaza estos datos con tus proyectos reales.</p></div>
+<div class="slide dark" data-theme="dark" style="align-items:center;text-align:center"><h3>07 · CONTACTO</h3><h2 style="font-size:44px">Construyamos algo juntos.</h2><p style="margin-top:50px;letter-spacing:3px;font-size:15px">+57 300 000 0000<br>contacto@gustavobarreiro.com<br>www.gustavobarreiro.com<br>Tumaco · Nariño · Colombia</p></div>
+<div class="nav" id="nav"></div><div class="arrow left" id="prev">‹</div><div class="arrow right" id="next">›</div><div class="counter" id="counter">01 / 09</div>
+<script>
+const slides=document.querySelectorAll('.slide'),nav=document.getElementById('nav'),counter=document.getElementById('counter');let current=0;
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>go(i);nav.appendChild(d);});
+function go(i){slides[current].classList.remove('active');nav.children[current].classList.remove('active');current=(i+slides.length)%slides.length;slides[current].classList.add('active');nav.children[current].classList.add('active');counter.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');counter.className='counter '+(slides[current].dataset.theme==='light'?'on-light':'');document.querySelectorAll('.arrow').forEach(a=>a.className='arrow '+(a.classList.contains('left')?'left':'right')+' '+(slides[current].dataset.theme==='light'?'on-light':''));}
+document.getElementById('prev').onclick=()=>go(current-1);document.getElementById('next').onclick=()=>go(current+1);
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(current+1);if(e.key==='ArrowLeft')go(current-1);});
+<\/script></body></html>`)};
+
+const MANUAL_HTML = ${JSON.stringify(`<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><title>Manual de Marca — Gustavo Barreiro</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',sans-serif;color:#1A1A1A;background:#F4F1EA;line-height:1.6}
+.page{background:#fff;width:210mm;min-height:297mm;margin:20px auto;padding:24mm 20mm;box-shadow:0 8px 40px rgba(0,0,0,.1);page-break-after:always}
+h1{font-size:38px;letter-spacing:8px;font-weight:700;margin-bottom:8px}
+h2{font-size:14px;letter-spacing:6px;color:#0B3B60;font-weight:700;margin-bottom:24px;text-transform:uppercase;border-bottom:2px solid #0B3B60;padding-bottom:8px}
+h3{font-size:12px;letter-spacing:4px;color:#0B3B60;margin:24px 0 12px;text-transform:uppercase}
+p,li{font-size:11px;letter-spacing:1px;line-height:1.8}
+ul{margin-left:20px;margin-bottom:16px}
+.cover{background:#0B3B60;color:#F4F1EA;display:flex;flex-direction:column;justify-content:space-between}
+.cover h1{color:#F4F1EA;font-size:52px}
+.cover .sub{font-size:14px;letter-spacing:8px;color:#C06C4C;margin-top:12px}
+.cover .footer{font-size:10px;letter-spacing:4px;color:#F4F1EA;opacity:.6}
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:16px 0 24px}
+.swatch{text-align:center}
+.swatch .chip{height:80px;border-radius:4px;margin-bottom:8px}
+.swatch .name{font-size:9px;letter-spacing:2px;font-weight:700}
+.swatch .hex{font-size:9px;letter-spacing:1px;opacity:.6}
+.logos-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.logo-box{background:#F4F1EA;border-radius:4px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:140px}
+.logo-box.dark{background:#0B3B60}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+td,th{padding:10px;border-bottom:1px solid #ddd;font-size:10px;letter-spacing:1px;text-align:left}
+th{background:#0B3B60;color:#fff;font-weight:700;letter-spacing:2px}
+.wrong{display:inline-block;padding:8px 14px;background:#fff;border:1px dashed #C06C4C;color:#C06C4C;font-size:9px;margin:4px;letter-spacing:2px}
+.right{display:inline-block;padding:8px 14px;background:#fff;border:1px solid #2E4A35;color:#2E4A35;font-size:9px;margin:4px;letter-spacing:2px}
+@media print{body{background:#fff}.page{margin:0;box-shadow:none}}
+@page{size:A4;margin:0}
+</style></head><body>
+
+<div class="page cover">
+<div><div style="font-size:10px;letter-spacing:6px;opacity:.5">MANUAL DE MARCA · V1.0</div></div>
+<div><h1>GUSTAVO<br>BARREIRO</h1><div class="sub">ARQUITECTURA + INGENIERÍA · DISEÑO</div></div>
+<div class="footer">IDENTIDAD CORPORATIVA · 2025</div>
+</div>
+
+<div class="page">
+<h2>01 · Filosofía de marca</h2>
+<p><strong>Diseño alternativo. Arquitectura consciente.</strong></p>
+<p style="margin-top:16px">Gustavo Barreiro es un estudio de arquitectura e ingeniería con raíz en el Pacífico colombiano que opera con estándar global. Integramos diseño y construcción bajo un mismo techo, trabajando con recursos locales y una mirada estructural que respeta el territorio.</p>
+<h3>Valores</h3>
+<ul>
+<li><strong>Consciencia:</strong> cada decisión responde al entorno, al clima y a la comunidad.</li>
+<li><strong>Alternativa:</strong> no repetimos fórmulas; diseñamos soluciones propias.</li>
+<li><strong>Precisión:</strong> ingeniería rigurosa, arquitectura medible, obra entregada.</li>
+<li><strong>Territorio:</strong> Pacífico colombiano como punto de partida, mundo como destino.</li>
+</ul>
+<h3>Público objetivo</h3>
+<p>Clientes privados y públicos, nacionales e internacionales, que buscan un socio integral de diseño y construcción con sensibilidad cultural y estándar técnico.</p>
+</div>
+
+<div class="page">
+<h2>02 · Logotipo</h2>
+<p>El isotipo evoca una <strong>estructura en voladizo</strong>: columna, viga y nodos de unión. Representa la convivencia entre arquitectura (forma) e ingeniería (estructura). La línea vertical actúa como eje compositivo de plano técnico.</p>
+<div class="logos-grid" style="margin-top:24px">
+<div class="logo-box"><svg viewBox="0 0 1200 400" style="width:100%"><rect width="1200" height="400" fill="#F4F1EA"/>
+<g transform="translate(80,70)"><rect width="22" height="260" fill="#1A1A1A"/><rect width="380" height="22" fill="#1A1A1A"/>
+<rect x="250" y="-12" width="46" height="46" fill="#1A1A1A"/><rect x="358" width="22" height="120" fill="#1A1A1A"/>
+<rect y="238" width="340" height="22" fill="#1A1A1A"/><rect x="170" y="226" width="46" height="46" fill="#1A1A1A"/>
+<rect x="318" y="140" width="22" height="120" fill="#1A1A1A"/></g>
+<line x1="520" y1="70" x2="520" y2="330" stroke="#1A1A1A" stroke-width="6"/>
+<text x="580" y="180" font-family="Montserrat" font-weight="700" font-size="42" letter-spacing="8" fill="#1A1A1A">GUSTAVO BARREIRO</text>
+<text x="582" y="228" font-family="Montserrat" font-size="16" letter-spacing="12" fill="#0B3B60">ARQUITECTURA + INGENIERÍA</text>
+<text x="582" y="266" font-family="Montserrat" font-weight="300" font-size="14" letter-spacing="16" fill="#C06C4C">DISEÑO</text></svg></div>
+<div class="logo-box dark"><svg viewBox="0 0 1200 400" style="width:100%"><rect width="1200" height="400" fill="#0B3B60"/>
+<g transform="translate(80,70)"><rect width="22" height="260" fill="#F4F1EA"/><rect width="380" height="22" fill="#F4F1EA"/>
+<rect x="250" y="-12" width="46" height="46" fill="#F4F1EA"/><rect x="358" width="22" height="120" fill="#F4F1EA"/>
+<rect y="238" width="340" height="22" fill="#F4F1EA"/><rect x="170" y="226" width="46" height="46" fill="#F4F1EA"/>
+<rect x="318" y="140" width="22" height="120" fill="#F4F1EA"/></g>
+<text x="580" y="180" font-family="Montserrat" font-weight="700" font-size="42" letter-spacing="8" fill="#F4F1EA">GUSTAVO BARREIRO</text>
+<text x="582" y="228" font-family="Montserrat" font-size="16" letter-spacing="12" fill="#F4F1EA">ARQUITECTURA + INGENIERÍA</text>
+<text x="582" y="266" font-family="Montserrat" font-weight="300" font-size="14" letter-spacing="16" fill="#C06C4C">DISEÑO</text></svg></div>
+</div>
+<h3>Versiones autorizadas</h3>
+<ul>
+<li>Horizontal claro (fondo Arena) — uso principal</li>
+<li>Horizontal oscuro (fondo Azul Pacífico) — dark mode</li>
+<li>Vertical (fondo Azul Pacífico) — redes sociales</li>
+<li>Isotipo solo — foto de perfil, favicon, sello</li>
+<li>Monocromático negro — facturas, contratos, tampones</li>
+</ul>
+<h3>Tamaños mínimos</h3>
+<p>Digital: 32 px de ancho. Impreso: 15 mm de ancho.</p>
+</div>
+
+<div class="page">
+<h2>03 · Paleta cromática</h2>
+<div class="swatches">
+<div class="swatch"><div class="chip" style="background:#1A1A1A"></div><div class="name">NEGRO CARBÓN</div><div class="hex">#1A1A1A</div></div>
+<div class="swatch"><div class="chip" style="background:#0B3B60"></div><div class="name">AZUL PACÍFICO</div><div class="hex">#0B3B60</div></div>
+<div class="swatch"><div class="chip" style="background:#F4F1EA;border:1px solid #ddd"></div><div class="name">ARENA / HUESO</div><div class="hex">#F4F1EA</div></div>
+<div class="swatch"><div class="chip" style="background:#C06C4C"></div><div class="name">COBRE TIERRA</div><div class="hex">#C06C4C</div></div>
+</div>
+<h3>Códigos de producción</h3>
+<table>
+<tr><th>Color</th><th>HEX</th><th>RGB</th><th>CMYK</th></tr>
+<tr><td>Negro Carbón</td><td>#1A1A1A</td><td>26·26·26</td><td>0·0·0·90</td></tr>
+<tr><td>Azul Pacífico</td><td>#0B3B60</td><td>11·59·96</td><td>89·39·0·62</td></tr>
+<tr><td>Arena / Hueso</td><td>#F4F1EA</td><td>244·241·234</td><td>0·1·4·4</td></tr>
+<tr><td>Cobre Tierra</td><td>#C06C4C</td><td>192·108·76</td><td>0·44·60·25</td></tr>
+</table>
+<h3>Reserva</h3>
+<p>Verde Selva <strong>#2E4A35</strong> — disponible para gráficos secundarios o señalética en obra.</p>
+</div>
+
+<div class="page">
+<h2>04 · Tipografía</h2>
+<p>Todo el sistema usa la familia <strong>Montserrat</strong>, de licencia libre (Google Fonts). Geométrica, moderna, con excelente legibilidad en pantalla y en impresión.</p>
+<h3 style="font-size:28px;letter-spacing:8px;color:#1A1A1A;text-transform:none;font-weight:700;margin-top:24px">Montserrat Bold 700</h3>
+<p style="margin-bottom:20px">Nombre de la empresa, titulares, cifras clave.</p>
+<h3 style="font-size:20px;letter-spacing:6px;color:#1A1A1A;text-transform:none;font-weight:400">Montserrat Regular 400</h3>
+<p style="margin-bottom:20px">Subtítulos, cuerpos de texto, fichas técnicas.</p>
+<h3 style="font-size:16px;letter-spacing:4px;color:#1A1A1A;text-transform:none;font-weight:300">Montserrat Light 300</h3>
+<p style="margin-bottom:20px">Descriptores, notas, pies de página.</p>
+</div>
+
+<div class="page">
+<h2>05 · Aplicaciones</h2>
+<table>
+<tr><th>Medio</th><th>Versión</th><th>Formato</th></tr>
+<tr><td>Sitio web (header)</td><td>Horizontal</td><td>SVG</td></tr>
+<tr><td>Firma de correo</td><td>Horizontal</td><td>PNG transparente 600×200</td></tr>
+<tr><td>Instagram / LinkedIn (feed)</td><td>Vertical</td><td>PNG 1080×1080</td></tr>
+<tr><td>Foto de perfil redes</td><td>Isotipo</td><td>PNG 512×512</td></tr>
+<tr><td>Favicon web</td><td>Isotipo</td><td>PNG 32×32</td></tr>
+<tr><td>Facturas / contratos</td><td>Monocromático</td><td>SVG o PNG</td></tr>
+<tr><td>Tarjeta de presentación</td><td>Horizontal</td><td>CMYK para imprenta</td></tr>
+<tr><td>Vallas / gran formato</td><td>Horizontal</td><td>SVG vectorial</td></tr>
+<tr><td>Uniformes / bordado</td><td>Isotipo solo</td><td>Vectorial, 1 color</td></tr>
+<tr><td>Sellos / tampones</td><td>Isotipo + nombre</td><td>Vectorial, 1 color</td></tr>
+</table>
+<h3>Área de respeto</h3>
+<p>Dejar siempre un margen mínimo equivalente a <strong>1× la altura del isotipo</strong> alrededor de la marca.</p>
+</div>
+
+<div class="page">
+<h2>06 · Usos correctos e incorrectos</h2>
+<h3>✔ Permitido</h3>
+<div><span class="right">Fondo Arena</span><span class="right">Fondo Azul Pacífico</span><span class="right">Monocromático negro</span><span class="right">Isotipo en sello</span></div>
+<h3 style="color:#C06C4C">✘ Prohibido</h3>
+<div><span class="wrong">Rotar la marca</span><span class="wrong">Aplicar sombras</span><span class="wrong">Deformar proporciones</span><span class="wrong">Cambiar colores fuera de paleta</span><span class="wrong">Usar tipografía distinta</span><span class="wrong">Invertir el orden del nombre</span><span class="wrong">Añadir contornos</span></div>
+<h3>Fondos fotográficos</h3>
+<p>Cuando el logo se aplique sobre fotografía, usar la versión blanca (horizontal invertida) sobre un degradado oscuro del 40–60% de opacidad.</p>
+</div>
+
+<div class="page" style="display:flex;flex-direction:column;justify-content:space-between">
+<div>
+<h2>07 · Cierre</h2>
+<p>Este manual es la referencia oficial para cualquier aplicación de la marca Gustavo Barreiro — Arquitectura + Ingeniería. Cualquier uso fuera de lo aquí especificado debe ser aprobado por el titular de la marca.</p>
+<p style="margin-top:24px;font-size:10px;letter-spacing:3px;opacity:.6">VERSIÓN 1.0 · IDENTIDAD VISUAL · 2025</p>
+</div>
+<div style="text-align:right">
+<div style="font-size:14px;letter-spacing:6px;font-weight:700;color:#1A1A1A">GUSTAVO BARREIRO</div>
+<div style="font-size:10px;letter-spacing:4px;color:#0B3B60;margin-top:4px">ARQUITECTURA + INGENIERÍA</div>
+<div style="font-size:9px;letter-spacing:8px;color:#C06C4C;margin-top:8px">DISEÑO</div>
+</div>
+</div>
+
+</body></html>`)};
+
+const REDES_HTML = ${JSON.stringify(`<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><title>Plantillas Redes — Gustavo Barreiro</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+body{font-family:'Montserrat',sans-serif;background:#eae7df;padding:40px;margin:0}
+h1{font-size:20px;letter-spacing:6px;color:#1A1A1A;text-transform:uppercase;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.card{background:#fff;border-radius:8px;padding:16px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.card h2{font-size:11px;letter-spacing:3px;color:#0B3B60;text-transform:uppercase;margin-bottom:12px}
+.preview{display:flex;align-items:center;justify-content:center;min-height:200px;margin-bottom:12px}
+.preview svg{max-width:100%;height:auto;max-height:280px}
+button{width:100%;padding:10px;border:none;border-radius:4px;background:#0B3B60;color:#fff;font-family:'Montserrat';font-size:11px;letter-spacing:2px;cursor:pointer;text-transform:uppercase}
+button:hover{background:#C06C4C}
+</style></head><body>
+<h1>Gustavo Barreiro — Plantillas para Redes</h1>
+<div class="grid" id="grid"></div>
+<script>
+const templates={
+'feed-servicios':{name:'Feed · Post de servicio',w:1080,h:1080,svg:\`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080"><defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap');.t1{font-family:'Montserrat';font-weight:700;font-size:76px;letter-spacing:6px;fill:#F4F1EA}.t2{font-family:'Montserrat';font-weight:300;font-size:28px;letter-spacing:8px;fill:#C06C4C}.t3{font-family:'Montserrat';font-weight:400;font-size:22px;letter-spacing:5px;fill:#F4F1EA;opacity:.7}</style></defs><rect width="1080" height="1080" fill="#0B3B60"/><g transform="translate(80,80) scale(0.6)"><rect width="22" height="260" fill="#F4F1EA"/><rect width="380" height="22" fill="#F4F1EA"/><rect x="250" y="-12" width="46" height="46" fill="#F4F1EA"/><rect x="358" width="22" height="120" fill="#F4F1EA"/><rect y="238" width="340" height="22" fill="#F4F1EA"/><rect x="170" y="226" width="46" height="46" fill="#F4F1EA"/><rect x="318" y="140" width="22" height="120" fill="#F4F1EA"/></g><text x="80" y="620" class="t1">INGENIERÍA</text><text x="80" y="700" class="t1">ESTRUCTURAL</text><text x="80" y="770" class="t2">CÁLCULO · DISEÑO · OBRA</text><line x1="80" y1="820" x2="300" y2="820" stroke="#C06C4C" stroke-width="2"/><text x="80" y="900" class="t3">GUSTAVO BARREIRO</text><text x="80" y="935" class="t3" style="font-size:14px;letter-spacing:6px">ARQUITECTURA + INGENIERÍA</text></svg>\`},
+'feed-cita':{name:'Feed · Cita / Frase',w:1080,h:1080,svg:\`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080"><defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap');.q{font-family:'Montserrat';font-weight:300;font-size:52px;line-height:1.4;letter-spacing:2px;fill:#1A1A1A}.a{font-family:'Montserrat';font-weight:700;font-size:20px;letter-spacing:6px;fill:#C06C4C}</style></defs><rect width="1080" height="1080" fill="#F4F1EA"/><text x="120" y="400" font-family="Montserrat" font-weight="700" font-size="180" fill="#C06C4C" opacity="0.25">"</text><text x="120" y="480" class="q">Diseñar no es</text><text x="120" y="550" class="q">decorar. Es</text><text x="120" y="620" class="q">resolver.</text><line x1="120" y1="720" x2="260" y2="720" stroke="#C06C4C" stroke-width="2"/><text x="120" y="780" class="a">GUSTAVO BARREIRO</text><text x="120" y="810" style="font-family:'Montserrat';font-weight:300;font-size:13px;letter-spacing:6px;fill:#0B3B60">ARQUITECTURA + INGENIERÍA</text></svg>\`},
+'feed-proyecto':{name:'Feed · Proyecto',w:1080,h:1080,svg:\`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080"><defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap');.cat{font-family:'Montserrat';font-weight:700;font-size:18px;letter-spacing:6px;fill:#C06C4C}.ttl{font-family:'Montserrat';font-weight:700;font-size:54px;letter-spacing:4px;fill:#F4F1EA}.loc{font-family:'Montserrat';font-weight:300;font-size:22px;letter-spacing:5px;fill:#F4F1EA;opacity:.8}.foot{font-family:'Montserrat';font-weight:300;font-size:16px;letter-spacing:6px;fill:#F4F1EA;opacity:.6}</style></defs><rect width="1080" height="1080" fill="#1A1A1A"/><rect x="0" y="0" width="1080" height="540" fill="#0B3B60"/><text x="80" y="120" class="cat">PROYECTO EN CURSO</text><text x="80" y="440" class="ttl">CASA</text><text x="80" y="500" class="ttl">TUMACO</text><text x="80" y="700" class="loc">VIVIENDA UNIFAMILIAR</text><text x="80" y="740" class="loc">240 M² · PACÍFICO COLOMBIANO</text><line x1="80" y1="880" x2="260" y2="880" stroke="#C06C4C" stroke-width="2"/><text x="80" y="950" class="foot">GUSTAVO BARREIRO · ARQUITECTURA + INGENIERÍA</text></svg>\`},
+'story':{name:'Story · 1080×1920',w:1080,h:1920,svg:\`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920"><defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap');.h{font-family:'Montserrat';font-weight:700;font-size:88px;letter-spacing:6px;fill:#F4F1EA;line-height:1.1}.s{font-family:'Montserrat';font-weight:300;font-size:28px;letter-spacing:8px;fill:#C06C4C}.f{font-family:'Montserrat';font-weight:300;font-size:20px;letter-spacing:6px;fill:#F4F1EA;opacity:.6}</style></defs><rect width="1080" height="1920" fill="#0B3B60"/><g transform="translate(100,200) scale(0.8)"><rect width="22" height="260" fill="#F4F1EA"/><rect width="380" height="22" fill="#F4F1EA"/><rect x="250" y="-12" width="46" height="46" fill="#F4F1EA"/><rect x="358" width="22" height="120" fill="#F4F1EA"/><rect y="238" width="340" height="22" fill="#F4F1EA"/><rect x="170" y="226" width="46" height="46" fill="#F4F1EA"/><rect x="318" y="140" width="22" height="120" fill="#F4F1EA"/></g><text x="100" y="900" class="h">DISEÑAMOS</text><text x="100" y="1000" class="h">Y CONSTRUIMOS</text><text x="100" y="1100" class="h">TU OBRA.</text><text x="100" y="1220" class="s">ANTEPROYECTO → ENTREGA</text><line x1="100" y1="1700" x2="350" y2="1700" stroke="#C06C4C" stroke-width="2"/><text x="100" y="1770" class="f">GUSTAVO BARREIRO</text><text x="100" y="1810" class="f" style="font-size:14px">ARQUITECTURA + INGENIERÍA</text></svg>\`},
+'linkedin-cover':{name:'LinkedIn · Portada 1584×396',w:1584,h:396,svg:\`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396"><defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap');.h{font-family:'Montserrat';font-weight:700;font-size:52px;letter-spacing:8px;fill:#F4F1EA}.s{font-family:'Montserrat';font-weight:300;font-size:18px;letter-spacing:10px;fill:#C06C4C}</style></defs><rect width="1584" height="396" fill="#0B3B60"/><g transform="translate(100,90) scale(0.8)"><rect width="22" height="260" fill="#F4F1EA"/><rect width="380" height="22" fill="#F4F1EA"/><rect x="250" y="-12" width="46" height="46" fill="#F4F1EA"/><rect x="358" width="22" height="120" fill="#F4F1EA"/><rect y="238" width="340" height="22" fill="#F4F1EA"/><rect x="170" y="226" width="46" height="46" fill="#F4F1EA"/><rect x="318" y="140" width="22" height="120" fill="#F4F1EA"/></g><line x1="600" y1="90" x2="600" y2="306" stroke="#C06C4C" stroke-width="3"/><text x="680" y="180" class="h">GUSTAVO BARREIRO</text><text x="684" y="220" class="s">ARQUITECTURA + INGENIERÍA · DISEÑO</text></svg>\`},
+'whatsapp':{name:'WhatsApp Business · 640×640',w:640,h:640,svg:\`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><circle cx="320" cy="320" r="320" fill="#0B3B60"/><g transform="translate(120,190) scale(0.72)"><rect width="22" height="260" fill="#F4F1EA"/><rect width="380" height="22" fill="#F4F1EA"/><rect x="250" y="-12" width="46" height="46" fill="#F4F1EA"/><rect x="358" width="22" height="120" fill="#F4F1EA"/><rect y="238" width="340" height="22" fill="#F4F1EA"/><rect x="170" y="226" width="46" height="46" fill="#F4F1EA"/><rect x="318" y="140" width="22" height="120" fill="#F4F1EA"/></g></svg>\`}
+};
+const grid=document.getElementById('grid');
+Object.entries(templates).forEach(([id,t])=>{const c=document.createElement('div');c.className='card';
+c.innerHTML='<h2>'+t.name+'</h2><div class="preview">'+t.svg+'</div><button onclick="dSVG(\\''+id+'\\')">Descargar SVG</button><button style="margin-top:8px;background:#C06C4C" onclick="dPNG(\\''+id+'\\','+t.w+','+t.h+')">Descargar PNG</button>';
+grid.appendChild(c);});
+function dSVG(id){const b=new Blob([templates[id].svg],{type:'image/svg+xml'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='gb-'+id+'.svg';a.click();}
+function dPNG(id,w,h){const b=new Blob([templates[id].svg],{type:'image/svg+xml;charset=utf-8'});const u=URL.createObjectURL(b);const img=new Image();img.onload=()=>{const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,w,h);x.drawImage(img,0,0,w,h);c.toBlob(bb=>{const uu=URL.createObjectURL(bb);const a=document.createElement('a');a.href=uu;a.download='gb-'+id+'.png';a.click();});};img.src=u;}
+<\/script></body></html>`)};
+
+<\/script>
+</body>
+</html>
